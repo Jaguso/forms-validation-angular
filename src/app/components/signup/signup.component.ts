@@ -23,7 +23,9 @@ export class SignupComponent implements OnInit {
   addUser(email, firstname, lastname, password) {
     this.authService
       .addUser(email, firstname, lastname, password)
-      .subscribe()
+      .subscribe((response) => {
+        console.log(response["success"]);
+      })
     console.log(this.createForm.value);
   }
 
