@@ -9,6 +9,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { AuthenticationService } from './services/authentication.service';
+
 const routes: Routes = [
   { path: '', component: SignupComponent },
   { path: 'login', component: LoginComponent }
@@ -28,7 +30,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
