@@ -17,6 +17,6 @@ export class AuthenticationService {
       lastname: lastname,
       password: password
     };
-    return this.http.post('${this.url}/auth/user/create', user);
+    return this.http.post(`${this.url}/auth/user/create`, user);
   }
 }
