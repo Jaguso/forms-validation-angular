@@ -4,18 +4,18 @@
     <div class="form-group">
       <label>
         Email:
-        <input class="form-control" type="text" formControlName="email">
+        <input class="form-control" type="text" formControlName="email" #email>
       </label>
     </div>
 
     <div class="form-group">
       <label>
         Password:
-        <input class="form-control" type="password" formControlName="password">
+        <input class="form-control" type="password" formControlName="password" #password>
       </label>
     </div>
 
-    <button type="submit" class="btn btn-success" (click)="authLogin()">Save</button> 
+    <button type="submit" class="btn btn-success" (click)="authLogin(email.value, password.value)">Save</button> 
 
   </form>
 </div>

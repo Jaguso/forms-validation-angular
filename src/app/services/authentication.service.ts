@@ -19,4 +19,13 @@ export class AuthenticationService {
     };
     return this.http.post(`${this.url}/auth/user/create`, user);
   }
+
+  authenticateUser(email, password) {
+    const authUser = {
+      email: email,
+      password: password
+    };
+    return this.http.post(`${this.url}/auth/user/authenticate`, authUser)
+  }
+
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
+import * as jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-login',
@@ -17,12 +18,19 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  authLogin() {
-    console.log(this.createForm.value);
+  authLogin(email, password) {
+    this.authService
+      .authenticateUser(email, password)
+      .subscribe((response) => {
+        localStorage.setItem("token", response["token"]);
+        localStorage.setItem(
+          "userId",
+          this.getDecodeAccessToken(localStorage.getItem("token")).id)
+      })
   }
 
-  onSubmit() {
-    console.log(this.createForm.value)
+  getDecodeAccessToken(token: string): any {
+    return jwt_decode(token);
   }
 
   ngOnInit() {
