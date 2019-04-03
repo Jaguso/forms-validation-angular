@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountsService } from '../../services/accounts.service';
 
 @Component({
   selector: 'app-catalogs',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private accountsService: AccountsService) { }
 
   ngOnInit() {
+    this.accountsService
+      .getAccounts()
+      .subscribe((response) => {
+        console.log(response["response"])
+      });
   }
 
 }

@@ -17,7 +17,8 @@ import { CatalogsComponent } from './components/catalogs/catalogs.component';
 const routes: Routes = [
   { path: '', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'accounts', component: AccountsComponent }
+  { path: 'accounts', component: AccountsComponent },
+  { path: 'catalogs', component: CatalogsComponent }
 ];
 
 @NgModule({
