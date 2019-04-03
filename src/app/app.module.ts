@@ -12,6 +12,7 @@ import { AccountsComponent } from './components/accounts/accounts.component';
 
 import { AuthenticationService } from './services/authentication.service';
 import { AccountsService } from './services/accounts.service';
+import { CatalogsComponent } from './components/catalogs/catalogs.component';
 
 const routes: Routes = [
   { path: '', component: SignupComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
     SignupComponent,
     NavbarComponent,
     LoginComponent,
-    AccountsComponent
+    AccountsComponent,
+    CatalogsComponent
   ],
   imports: [
     BrowserModule,

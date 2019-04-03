@@ -14,5 +14,10 @@ export class AccountsService {
     let token = localStorage.getItem("token");
     return this.http.get(`${this.url}/accounts`, {headers: {'x-access-token': token}});
   }
+
+  getCatalogs() {
+    let token = localStorage.getItem("token");
+    return this.http.get(`${this.url}/catalogs/cards`, {headers: {'x-access-token': token}});    
+  }
 }
 
