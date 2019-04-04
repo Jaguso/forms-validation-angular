@@ -10,6 +10,8 @@ export class AccountsComponent implements OnInit {
 
   constructor(private accountsService: AccountsService) { }
 
+  accounts = ["acccount 1", "account 2", "account 3"]
+
   ngOnInit() {
     this.accountsService.getAccounts().subscribe((accounts) => {
       console.log("cuentas: ", accounts);
